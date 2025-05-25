@@ -1,0 +1,23 @@
+[
+  {
+    "id": "classic",
+    "name": "Professional Standard",
+    "description": "Time-tested, clear, and structured format. Ideal for corporate roles and ATS compatibility.",
+    "filename": "../template.tex",
+    "preview": "classic.png"
+  },
+  {
+    "id": "modern",
+    "name": "Contemporary Minimalist",
+    "description": "A stylish look with clean lines and modern typography. Perfect for innovative fields and balanced presentation.",
+    "filename": "../modern.tex",
+    "preview": "modern.png"
+  },
+  {
+    "id": "cool",
+    "name": "Impactful Emphasis",
+    "description": "A bold and memorable design that grabs attention with visual elements. Ideal for creative roles or when you want to stand out.",
+    "filename": "../cool.tex",
+    "preview": "cool.png"
+  }
+] 

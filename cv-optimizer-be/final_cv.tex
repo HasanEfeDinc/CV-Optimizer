@@ -1,0 +1,305 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Taha Yasir Çolak's CV},
+    pdfauthor={Taha Yasir Çolak},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Taha Yasir Çolak - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    \needspace{4\baselineskip}
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+\let\hrefWithoutArrow\href
+
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{30 pt}{30 pt}
+        \textbf{Taha Yasir Çolak}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\footnotesize\faMapMarker*}\hspace*{0.13cm}Balçova/Izmir, Türkiye}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:colak.tahayasir.se@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}colak.tahayasir.se@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+90-545-897-5459}{{\footnotesize\faPhone*}\hspace*{0.13cm}+90 545 897 5459}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/colaktahayasir/}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}colaktahayasir}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/tahacolak}{{\footnotesize\faGithub}\hspace*{0.13cm}tahacolak}}%
+    \end{header}
+
+    \section{Motivation}
+
+    \begin{onecolentry}
+        As a dedicated software engineer, I am committed to developing cutting-edge applications that address real-world needs. With a strong foundation in Natural Language Processing and Image Processing, I thrive on crafting innovative solutions to complex challenges. My expertise in Agile-Scrum methodologies allows me to lead and collaborate effectively, ensuring seamless project execution with adaptability and efficiency.
+    \end{onecolentry}
+
+    \section{Education}
+
+    \begin{twocolentry}{\text{Sep 2020 - Present}}{}
+        \textbf{Izmir University of Economics}, Bachelor in Software Engineering, Faculty of Engineering
+        \begin{highlights}
+            \item Grade: 4th Grade
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\text{Sep 2024 - Present}}{}
+        \textbf{Eskisehir Anadolu University}, Bachelor in Business Administration, Open Education Faculty / Business Administration
+        \begin{highlights}
+            \item Grade: 1st Grade
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\text{Aug 2019 - Jun 2020}}{}
+        \textbf{Balıkesir Pusula College}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\text{Sep 2016 - Jun 2019}}{}
+        \textbf{Balıkesir Gülser-Mehmet Bolluk High School}
+    \end{twocolentry}
+
+    \section{Internships}
+
+    \begin{twocolentry}{\text{07.2024 - 01.2025}}{Balıkesir}
+        \textbf{TUSMEC Swarm Robot Technologies}
+        \begin{highlights}
+            \item At TUSMEC, I calculated NDVI values for agricultural fields using image processing and gained experience simulating environments with ROS for swarm drone systems.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\text{02.2020 - 03.2020}}{Dokuz Eylul University/İzmir}
+        \textbf{International BioMedicine and Genom Institute}
+        \begin{highlights}
+            \item During my internship at the International BioMedicine and Genom Institute, I used image processing software to detect cancer in tissue samples and integrated the results into the IBG records.
+        \end{highlights}
+    \end{twocolentry}
+
+    \section{Projects}
+
+    \begin{twocolentry}{Zonguldak}{}
+        \textbf{BTK Akademi Advance Java Camp}
+        \begin{highlights}
+            \item In this camp, I got a great opportunity over developing advanced and well-structured Java project during 8 days.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{Izmir University of Economics}{}
+        \textbf{Software Team Member in TeknoFest Underwater Autonomous Vehicle Project}
+        \begin{highlights}
+            \item I retrieved to implement image processing code parts using YOLO v8 and wrote solid-designed report (Critical Design Report/Software 8.7/10).
+        \end{highlights}
+    \end{twocolentry}
+
+    \section{Skills}
+
+    \begin{onecolentry}
+        \textbf{Programming Languages:} Java, Python, C++, C\#, Flutter, SQL
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{onecolentry}
+        \textbf{Technical Skills:} Agile-Scrum, Image Processing, Trello, Enterprise Architect, Junit, .NET, ISO and IEEE Standards
+    \end{onecolentry}
+
+    \section{Certificates}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Social Engineering and Phishing
+            \item Quality Engineering Certification
+            \item işBankası Proschool AI and Automation
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Languages}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item English: Fluent
+            \item Spanish: Limited Knowledge
+            \item Turkish: Native Proficiency
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Interests}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Swimming & GYM
+            \item Reading and Searching
+            \item Watching Cult Films
+        \end{highlights}
+    \end{onecolentry}
+
+\end{document}
