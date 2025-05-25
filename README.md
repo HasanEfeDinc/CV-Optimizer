@@ -43,25 +43,6 @@ CV-Optimizer is an AI-powered web application that helps users generate personal
 4. GPT-4 processes everything and fills in the LaTeX template.
 5. Final CV and Cover Letter are generated as a bilingual PDF.
 
-## 📂 Project Structure (Simplified)
-
-cv-optimizer/
-│
-├── backend/
-│ ├── api.py # Flask server and API routes
-│ ├── LatexConverter.py # LaTeX + JSON + LLM integration
-│
-├── frontend/
-│ ├── src/
-│ │ ├── components/ # React components
-│ │ ├── services.js/ # API calls
-│ │ └── CVOptimizer.js # Main entry point
-│
-├── linkedin_data.json # Sample LinkedIn parsed data
-├── github_repos.json # Sample GitHub parsed data
-├── CV.json # Sample GitHub parsed data
-├── job_Description.json # Sample GitHub parsed data
-
 ## 🎓 Academic Context
 
 This project was developed as a graduation capstone project focused on practical AI integration into career tools. It highlights the use of LLMs in document generation, job matching, and data-driven personalization.
