@@ -98,16 +98,7 @@ def merge_json_template_with_llm(
         "13) Eğer kullanıcı Linkedin hesabının linkini paylaştıysa CV ye bir 'Linkedin Projects' adlı bir section ekle ve altına da eğer linkedin_data boş değilse kullanıcının verdiği iş tanımıyla alaklı projeleri ekle \n"
         "14) Make sure github links are correctly linked to the project repository.\n"
         "15) Always put the motivation text in the beginning of the document.\n"
-        "16) In the Experience section, include **all** entries from the JSON’s `experience` array exactly, preserving both their count (4) and original order. Do not drop or merge any of them.\n"
-        "17) Bil ki Github projeleri ile Linkedin projeleri farklı şeyler kullanıcıgithub veya linkedin verirse kesinlikle ekle aynı anda 2 sini de verirse 2 başlık da olmalı\n"
-        "18) Bu kurallar dışında kafana göre bir başlık eklememelisin\n"
-        "19) Experiences Kısmı katiyen aynı aktarılmalı 4 tane deneyim varsa 4 ü de yeni cv de olucak\n"
-        "20) Yazılar sayfanın A4 ün dısına taşmamalı kesinlikle alt satıra geçmeli\n"
-        "21) Eğer kullancının verdiği CV de 'CERTIFICATIONS & AWARDS' kısmı yoksa yeni cv de de olmamalı kesinlikle\n"
-        "22) Eğer kullancının verdiği CV de 'REFERENCES' kısmı yoksa yeni cv de de olmamalı kesinlikle\n"
-        "22)!!!!!!!!!!Bu çok önemli eğer kullanıcı hem github hem linkedin verdi ise ikisi de başlık olarak cv de bulunmalı \n"
-
-    )
+        
 
     # Call OpenAI
     response = openai.ChatCompletion.create(
